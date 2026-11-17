@@ -3,7 +3,30 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <omp.h>
+
+// Reloj de pared de alta resolucion que no depende de OpenMP, para que la
+// version secuencial de referencia se pueda compilar SIN -fopenmp.
+// En Windows (MinGW) omp_get_wtime() solo tiene resolucion de ~1 ms, por eso
+// se usa QueryPerformanceCounter; en Linux, clock_gettime(CLOCK_MONOTONIC).
+#ifdef _WIN32
+#include <windows.h>
+static double reloj(void) {
+    static LARGE_INTEGER frecuencia;
+    LARGE_INTEGER contador;
+    if (frecuencia.QuadPart == 0) {
+        QueryPerformanceFrequency(&frecuencia);
+    }
+    QueryPerformanceCounter(&contador);
+    return (double)contador.QuadPart / (double)frecuencia.QuadPart;
+}
+#else
+#include <time.h>
+static double reloj(void) {
+    struct timespec t;
+    clock_gettime(CLOCK_MONOTONIC, &t);
+    return (double)t.tv_sec + (double)t.tv_nsec * 1e-9;
+}
+#endif
 
 // Inicializa la malla.
 void inicializar(double *malla, int n) {
@@ -138,7 +161,7 @@ double ejecutar_simulacion(int n, int max_pasos, double tolerancia,
     int residuo_decreciente = 1;
 
     // Comienza el cronometraje.
-    double inicio = omp_get_wtime();
+    double inicio = reloj();
 
     for (int paso = 1; paso <= max_pasos; paso++) {
 
@@ -165,7 +188,7 @@ double ejecutar_simulacion(int n, int max_pasos, double tolerancia,
     }
 
     // Finaliza el cronometraje.
-    double tiempo_total = omp_get_wtime() - inicio;
+    double tiempo_total = reloj() - inicio;
 
     // Comprobaciones fuera del cronometro.
     double checksum = sumar_temperaturas_interiores(actual, n);
@@ -174,17 +197,14 @@ double ejecutar_simulacion(int n, int max_pasos, double tolerancia,
 
     if (mostrar) {
         // Resultados principales en una sola linea.
-        printf("Pasos=%d Residuo=%.6f Checksum=%.6f Tiempo=%.9f\n",
-               pasos_ejecutados, residuo, checksum, tiempo_total);
-
-        printf("Bordes: %s\n",
-               bordes_correctos ? "CORRECTOS" : "INCORRECTOS");
-
-        printf("Residuo decreciente: %s\n",
-               residuo_decreciente ? "CORRECTO" : "INCORRECTO");
-
-        printf("Temperaturas entre 0 y 100: %s\n",
-               temperaturas_correctas ? "CORRECTO" : "INCORRECTO");
+        // Formato clave=valor separado por espacios, facil de procesar
+        // con un script (una ejecucion = una linea).
+        printf("N=%d Pasos=%d Residuo=%.6e Checksum=%.6f Tiempo=%.6f "
+               "Bordes=%s Monotono=%s Rango=%s\n",
+               n, pasos_ejecutados, residuo, checksum, tiempo_total,
+               bordes_correctos ? "OK" : "FALLO",
+               residuo_decreciente ? "OK" : "FALLO",
+               temperaturas_correctas ? "OK" : "FALLO");
     }
 
     free(actual);
