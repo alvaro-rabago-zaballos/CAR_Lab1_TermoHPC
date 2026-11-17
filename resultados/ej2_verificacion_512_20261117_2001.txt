@@ -1,0 +1,16 @@
+2026-11-17 20:01
+
+VERIFICACION: paralelo frente a referencia secuencial
+N=512  pasos=300  tolerancia=1e-09  checksum referencia=4.648854282901431e+05
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          4.648854282901431e+05   0.000e+00               PASA
+2      2       0.000e+00          4.648854282901431e+05   0.000e+00               PASA
+4      4       0.000e+00          4.648854282901431e+05   0.000e+00               PASA
+8      8       0.000e+00          4.648854282901426e+05   1.127e-15               PASA
+12     12      0.000e+00          4.648854282901345e+05   1.853e-14               PASA
+16     16      0.000e+00          4.648854282901020e+05   8.840e-14               PASA
+20     20      0.000e+00          4.648854282901244e+05   4.032e-14               PASA
+24     24      0.000e+00          4.648854282901241e+05   4.094e-14               PASA
+
+Verificacion global: PASA
