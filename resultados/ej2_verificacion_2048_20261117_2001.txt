@@ -1,0 +1,17 @@
+2026-11-17 20:01
+gcc.exe (x86_64-win32-seh-rev0, Built by MinGW-W64 project) 8.1.0
+
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+2      2       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+4      4       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+8      8       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+16     16      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+20     20      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+24     24      0.000e+00          1.890947666930686e+06   2.051e-13               PASA
+
+Verificacion global: PASA

@@ -1,0 +1,29 @@
+2026-11-17 20:02
+
+FALLO PROVOCADO: actualizacion in situ (un solo buffer)
+N=512  pasos=300  tolerancia=1e-09  checksum Jacobi=4.648854282901431e+05
+Hilos  Dif. max. frente a Jacobi  Dif. max. frente a in situ 1 hilo  Checksum                Verificacion
+-----------------------------------------------------------------------------------------------------------
+1      1.709e+01                  0.000e+00                          6.734354473551553e+05   RECHAZADA
+2      1.709e+01                  8.557e-34                          6.734354473551553e+05   RECHAZADA
+4      1.709e+01                  8.936e-11                          6.734354473550383e+05   RECHAZADA
+8      1.709e+01                  7.910e-04                          6.734330730585064e+05   RECHAZADA
+12     1.709e+01                  1.544e-02                          6.733756116645487e+05   RECHAZADA
+16     1.709e+01                  4.181e-02                          6.732269877813242e+05   RECHAZADA
+20     1.709e+01                  6.226e-02                          6.730536547938720e+05   RECHAZADA
+24     1.709e+01                  7.155e-02                          6.729373888467753e+05   RECHAZADA
+
+Segunda ejecucion identica:
+
+FALLO PROVOCADO: actualizacion in situ (un solo buffer)
+N=512  pasos=300  tolerancia=1e-09  checksum Jacobi=4.648854282901431e+05
+Hilos  Dif. max. frente a Jacobi  Dif. max. frente a in situ 1 hilo  Checksum                Verificacion
+-----------------------------------------------------------------------------------------------------------
+1      1.709e+01                  0.000e+00                          6.734354473551553e+05   RECHAZADA
+2      1.709e+01                  8.557e-34                          6.734354473551553e+05   RECHAZADA
+4      1.709e+01                  8.936e-11                          6.734354473550383e+05   RECHAZADA
+8      1.709e+01                  7.472e-04                          6.734333054076520e+05   RECHAZADA
+12     1.709e+01                  1.496e-02                          6.733772161997686e+05   RECHAZADA
+16     1.709e+01                  4.181e-02                          6.732269602776762e+05   RECHAZADA
+20     1.709e+01                  6.366e-02                          6.730312524772534e+05   RECHAZADA
+24     1.709e+01                  7.156e-02                          6.729338711280435e+05   RECHAZADA
