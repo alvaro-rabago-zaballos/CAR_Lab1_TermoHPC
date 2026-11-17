@@ -1,0 +1,74 @@
+# 2026-11-17 20:52  N=250 pasos=20133 repeticiones=4 criterio=minimo
+# gcc -Wall -Wextra -O2 termo_ej1.c -o termo_secuencial.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej2.c -o termo.exe -lm
+termo_secuencial.exe 250 20133 0 fijo
+N=250 Pasos=20133 Residuo=6.846275e-004 Checksum=1332432.273210 Tiempo=1.619437 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 250 20133 0 fijo
+N=250 Pasos=20133 Residuo=6.846275e-004 Checksum=1332432.273210 Tiempo=1.616520 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 250 20133 0 fijo
+N=250 Pasos=20133 Residuo=6.846275e-004 Checksum=1332432.273210 Tiempo=1.621316 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 250 20133 0 fijo
+N=250 Pasos=20133 Residuo=6.846275e-004 Checksum=1332432.273210 Tiempo=1.599316 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 1
+N=250 Hilos=1 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.684354 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 1
+N=250 Hilos=1 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.694069 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 1
+N=250 Hilos=1 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.692517 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 1
+N=250 Hilos=1 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.686198 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 2
+N=250 Hilos=2 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.558603 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 2
+N=250 Hilos=2 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.595593 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 2
+N=250 Hilos=2 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.512122 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 2
+N=250 Hilos=2 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.511737 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.372263 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.337163 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.345826 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.364770 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 8
+N=250 Hilos=8 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.485715 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 8
+N=250 Hilos=8 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.577009 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 8
+N=250 Hilos=8 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.561201 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 8
+N=250 Hilos=8 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.493670 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.849320 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.932073 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.919484 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.940866 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 16
+N=250 Hilos=16 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.234340 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 16
+N=250 Hilos=16 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.244048 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 16
+N=250 Hilos=16 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.375180 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 16
+N=250 Hilos=16 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.457570 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 20
+N=250 Hilos=20 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.876150 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 20
+N=250 Hilos=20 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.916873 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 20
+N=250 Hilos=20 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.895609 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 20
+N=250 Hilos=20 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.939067 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 24
+N=250 Hilos=24 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=3.266549 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 24
+N=250 Hilos=24 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=3.330006 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 24
+N=250 Hilos=24 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=3.279544 Bordes=OK Monotono=OK Rango=OK
+termo.exe 250 20133 0 fijo 24
+N=250 Hilos=24 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=3.350057 Bordes=OK Monotono=OK Rango=OK

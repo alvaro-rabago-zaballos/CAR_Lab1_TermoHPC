@@ -1,0 +1,14 @@
+# 2026-11-17 20:42
+# COSTE DE SINCRONIZACION, minimo de 5 repeticiones
+# barrera_us: una '#pragma omp barrier' dentro de una region ya abierta
+# region_us: abrir y cerrar un '#pragma omp parallel for' (lo que hace termo_ej2 dos veces por paso)
+hilos,reales,barrera_us,region_us
+1,1,0.024,2.019
+2,2,7.379,9.776
+4,4,16.675,20.669
+8,8,30.977,28.363
+12,12,46.387,38.184
+16,16,61.870,47.024
+20,20,77.272,56.058
+24,24,92.997,63.466
+# comprobacion (ignorar): 4410000
