@@ -1,11 +1,11 @@
-// TermoHPC I - Simulacion termica con el metodo de Jacobi.
+// TermoHPC I - Ejercicio 2: simulacion termica de Jacobi paralelizada con OpenMP.
+// (La version secuencial del ejercicio 1 esta en termo_ej1.c.)
 //
-// Un unico fuente para las dos versiones:
-//   - Secuencial (referencia, ejercicio 1): se compila SIN -fopenmp y los
-//     #pragma omp se ignoran.
-//       gcc -Wall -Wextra -Wno-unknown-pragmas -O2 -std=c11 termo.c -o termo_secuencial.exe -lm
-//   - Paralela (ejercicio 2): se compila CON -fopenmp.
-//       gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo.c -o termo.exe -lm
+// Compilacion de la version paralela:
+//       gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej2.c -o termo.exe -lm
+// Sin -fopenmp los #pragma omp se ignoran y se obtiene la misma simulacion en
+// secuencial (util para comprobar que el fuente no depende de OpenMP):
+//       gcc -Wall -Wextra -Wno-unknown-pragmas -O2 -std=c11 termo_ej2.c -o termo_ej2_sin_omp.exe -lm
 
 #define _POSIX_C_SOURCE 199309L
 
