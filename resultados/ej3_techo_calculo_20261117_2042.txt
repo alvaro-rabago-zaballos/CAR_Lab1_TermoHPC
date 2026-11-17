@@ -1,0 +1,12 @@
+# 2026-11-17 20:42
+# TECHO DE CALCULO: 150000000 iteraciones por hilo, minimo de 5 repeticiones
+hilos,reales,tiempo_s,techo_speedup
+1,1,0.223825,1.000
+2,2,0.226174,1.979
+4,4,0.226481,3.953
+8,8,0.227352,7.876
+12,12,0.230883,11.633
+16,16,0.263708,13.580
+20,20,0.327578,13.665
+24,24,0.394968,13.601
+# comprobacion (ignorar): 435.000000
