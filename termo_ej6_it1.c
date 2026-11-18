@@ -122,7 +122,8 @@ double paso_jacobi_residuo(const double *actual, double *nueva, int n) {
 
     double residuo = 0.0;
 
-    #pragma omp parallel for default(none) shared(actual, nueva, n)             reduction(max : residuo) schedule(static)
+    #pragma omp parallel for default(none) shared(actual, nueva, n) \
+            reduction(max : residuo) schedule(static)
     for (int i = 1; i < n - 1; i++) {
         for (int j = 1; j < n - 1; j++) {
 

@@ -246,7 +246,10 @@ double *simular(int n, int max_pasos, double tolerancia,
     int terminar = 0;
     residuo_paso = 0.0;
 
-    #pragma omp parallel default(none)             shared(actual, nueva, n, max_pasos, tolerancia, modo_convergencia,                    residuo, residuo_anterior, residuo_decreciente,                    pasos_ejecutados, terminar, residuo_paso)
+    #pragma omp parallel default(none) \
+            shared(actual, nueva, n, max_pasos, tolerancia, modo_convergencia, \
+            residuo, residuo_anterior, residuo_decreciente, \
+            pasos_ejecutados, terminar, residuo_paso)
     {
         // Bucle temporal: sigue siendo SECUENCIAL; todos los hilos lo recorren
         // a la vez y se reparten las filas de cada paso.

@@ -30,7 +30,7 @@ def leer(ruta):
     with open(ruta, encoding="utf-8", errors="replace") as f:
         for linea in f:
             partes = linea.split()
-            if len(partes) == 6 and partes[0].isdigit():
+            if len(partes) >= 6 and partes[0].isdigit():
                 filas.append((int(partes[0]), float(partes[5])))
     return filas
 
