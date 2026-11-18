@@ -1,0 +1,130 @@
+# 2026-11-18 11:47  N(p)=round(1024*sqrt(p)) pasos=300 repeticiones=4 criterio=minimo
+# gcc -Wall -Wextra -O2 termo_ej1.c -o termo_secuencial.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej2.c -o termo.exe -lm
+termo.exe 1024 300 0 fijo 1
+N=1024 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=940239.507837 Tiempo=0.444282 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1024 300 0 fijo 1
+N=1024 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=940239.507837 Tiempo=0.444394 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1024 300 0 fijo 1
+N=1024 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=940239.507837 Tiempo=0.444793 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1024 300 0 fijo 1
+N=1024 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=940239.507837 Tiempo=0.438889 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1024 300 0 fijo
+N=1024 Pasos=300 Residuo=8.064433e-002 Checksum=940239.507837 Tiempo=0.437735 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1024 300 0 fijo
+N=1024 Pasos=300 Residuo=8.064433e-002 Checksum=940239.507837 Tiempo=0.431098 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1024 300 0 fijo
+N=1024 Pasos=300 Residuo=8.064433e-002 Checksum=940239.507837 Tiempo=0.437803 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1024 300 0 fijo
+N=1024 Pasos=300 Residuo=8.064433e-002 Checksum=940239.507837 Tiempo=0.435347 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1448 300 0 fijo 2
+N=1448 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1333892.104961 Tiempo=0.579506 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1448 300 0 fijo 2
+N=1448 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1333892.104961 Tiempo=0.577473 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1448 300 0 fijo 2
+N=1448 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1333892.104961 Tiempo=0.584190 Bordes=OK Monotono=OK Rango=OK
+termo.exe 1448 300 0 fijo 2
+N=1448 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1333892.104961 Tiempo=0.571510 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1448 300 0 fijo
+N=1448 Pasos=300 Residuo=8.064433e-002 Checksum=1333892.104961 Tiempo=1.021774 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1448 300 0 fijo
+N=1448 Pasos=300 Residuo=8.064433e-002 Checksum=1333892.104961 Tiempo=1.049129 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1448 300 0 fijo
+N=1448 Pasos=300 Residuo=8.064433e-002 Checksum=1333892.104961 Tiempo=1.037116 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 1448 300 0 fijo
+N=1448 Pasos=300 Residuo=8.064433e-002 Checksum=1333892.104961 Tiempo=1.046501 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.893500 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.864433 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.900701 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.891446 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.130969 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.148180 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.175353 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.130668 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2896 300 0 fijo 8
+N=2896 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=2678252.861180 Tiempo=1.658106 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2896 300 0 fijo 8
+N=2896 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=2678252.861180 Tiempo=1.645619 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2896 300 0 fijo 8
+N=2896 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=2678252.861180 Tiempo=1.647605 Bordes=OK Monotono=OK Rango=OK
+termo.exe 2896 300 0 fijo 8
+N=2896 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=2678252.861180 Tiempo=1.657826 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2896 300 0 fijo
+N=2896 Pasos=300 Residuo=8.064433e-002 Checksum=2678252.861180 Tiempo=4.519197 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2896 300 0 fijo
+N=2896 Pasos=300 Residuo=8.064433e-002 Checksum=2678252.861180 Tiempo=4.464504 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2896 300 0 fijo
+N=2896 Pasos=300 Residuo=8.064433e-002 Checksum=2678252.861180 Tiempo=4.408350 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2896 300 0 fijo
+N=2896 Pasos=300 Residuo=8.064433e-002 Checksum=2678252.861180 Tiempo=4.412781 Bordes=OK Monotono=OK Rango=OK
+termo.exe 3547 300 0 fijo 12
+N=3547 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=3282658.145916 Tiempo=2.556913 Bordes=OK Monotono=OK Rango=OK
+termo.exe 3547 300 0 fijo 12
+N=3547 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=3282658.145916 Tiempo=2.547880 Bordes=OK Monotono=OK Rango=OK
+termo.exe 3547 300 0 fijo 12
+N=3547 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=3282658.145916 Tiempo=2.553194 Bordes=OK Monotono=OK Rango=OK
+termo.exe 3547 300 0 fijo 12
+N=3547 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=3282658.145916 Tiempo=2.555079 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 3547 300 0 fijo
+N=3547 Pasos=300 Residuo=8.064433e-002 Checksum=3282658.145916 Tiempo=6.387659 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 3547 300 0 fijo
+N=3547 Pasos=300 Residuo=8.064433e-002 Checksum=3282658.145916 Tiempo=6.453198 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 3547 300 0 fijo
+N=3547 Pasos=300 Residuo=8.064433e-002 Checksum=3282658.145916 Tiempo=6.402463 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 3547 300 0 fijo
+N=3547 Pasos=300 Residuo=8.064433e-002 Checksum=3282658.145916 Tiempo=6.542946 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4096 300 0 fijo 16
+N=4096 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=3792363.985116 Tiempo=3.185051 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4096 300 0 fijo 16
+N=4096 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=3792363.985116 Tiempo=3.151441 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4096 300 0 fijo 16
+N=4096 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=3792363.985116 Tiempo=3.175943 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4096 300 0 fijo 16
+N=4096 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=3792363.985116 Tiempo=3.241909 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4096 300 0 fijo
+N=4096 Pasos=300 Residuo=8.064433e-002 Checksum=3792363.985116 Tiempo=8.723599 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4096 300 0 fijo
+N=4096 Pasos=300 Residuo=8.064433e-002 Checksum=3792363.985116 Tiempo=8.710424 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4096 300 0 fijo
+N=4096 Pasos=300 Residuo=8.064433e-002 Checksum=3792363.985116 Tiempo=8.750583 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4096 300 0 fijo
+N=4096 Pasos=300 Residuo=8.064433e-002 Checksum=3792363.985116 Tiempo=8.679221 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4579 300 0 fijo 20
+N=4579 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=4240793.712517 Tiempo=4.152678 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4579 300 0 fijo 20
+N=4579 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=4240793.712517 Tiempo=4.165268 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4579 300 0 fijo 20
+N=4579 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=4240793.712517 Tiempo=4.155512 Bordes=OK Monotono=OK Rango=OK
+termo.exe 4579 300 0 fijo 20
+N=4579 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=4240793.712517 Tiempo=4.325282 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4579 300 0 fijo
+N=4579 Pasos=300 Residuo=8.064433e-002 Checksum=4240793.712517 Tiempo=11.517361 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4579 300 0 fijo
+N=4579 Pasos=300 Residuo=8.064433e-002 Checksum=4240793.712517 Tiempo=10.891443 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4579 300 0 fijo
+N=4579 Pasos=300 Residuo=8.064433e-002 Checksum=4240793.712517 Tiempo=11.292595 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 4579 300 0 fijo
+N=4579 Pasos=300 Residuo=8.064433e-002 Checksum=4240793.712517 Tiempo=11.060260 Bordes=OK Monotono=OK Rango=OK
+termo.exe 5017 300 0 fijo 24
+N=5017 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=4647444.272754 Tiempo=4.925111 Bordes=OK Monotono=OK Rango=OK
+termo.exe 5017 300 0 fijo 24
+N=5017 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=4647444.272754 Tiempo=4.933430 Bordes=OK Monotono=OK Rango=OK
+termo.exe 5017 300 0 fijo 24
+N=5017 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=4647444.272754 Tiempo=4.925298 Bordes=OK Monotono=OK Rango=OK
+termo.exe 5017 300 0 fijo 24
+N=5017 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=4647444.272754 Tiempo=4.920585 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 5017 300 0 fijo
+N=5017 Pasos=300 Residuo=8.064433e-002 Checksum=4647444.272754 Tiempo=13.510407 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 5017 300 0 fijo
+N=5017 Pasos=300 Residuo=8.064433e-002 Checksum=4647444.272754 Tiempo=13.393646 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 5017 300 0 fijo
+N=5017 Pasos=300 Residuo=8.064433e-002 Checksum=4647444.272754 Tiempo=13.391301 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 5017 300 0 fijo
+N=5017 Pasos=300 Residuo=8.064433e-002 Checksum=4647444.272754 Tiempo=13.744945 Bordes=OK Monotono=OK Rango=OK
