@@ -1,0 +1,9 @@
+# 2026-11-18 13:04 Perfil del paso (termo_ej6_perfil.c = termo_ej2.c + cronometros), N=2048, 300 pasos, 4 repeticiones
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.139158 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.991849 T_residuo=1.147293
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.184216 Bordes=OK Monotono=OK Rango=OK T_jacobi=1.004341 T_residuo=1.179858
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.245797 Bordes=OK Monotono=OK Rango=OK T_jacobi=1.046658 T_residuo=1.199118
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.134093 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.980339 T_residuo=1.153737
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.790330 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.427730 T_residuo=0.362573
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.767764 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.414041 T_residuo=0.353692
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.764953 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.412267 T_residuo=0.352659
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.768573 Bordes=OK Monotono=OK Rango=OK T_jacobi=0.415289 T_residuo=0.353244
