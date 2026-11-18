@@ -1,0 +1,18 @@
+# 2026-11-18 16:50  Anomalia de la malla pequena
+# gcc -Wall -Wextra -O2 -std=c11 termo_ej1.c -o termo_secuencial.exe -lm && gcc -Wall -Wextra -O2 -std=c11 termo_ej3_desplazado.c -o termo_ej3_desplazado.exe -lm
+# 1) termo_secuencial N 4800 0 fijo, 6 ejecuciones identicas (Tiempo en s)
+N=250: 0.386016 0.387030 0.385369 0.383328 0.384508 0.383418
+N=255: 1.600958 0.401222 1.587455 0.395912 1.587934 1.382000
+N=256: 0.395170 1.579720 1.778022 0.401746 1.583590 1.576626
+N=257: 1.793332 0.399319 1.783132 1.585747 1.797825 1.792236
+N=264: 0.425871 1.605917 1.812937 0.426308 0.424932 0.424922
+# 2) termo_ej3_desplazado 256 4800 0 fijo DESPLAZAMIENTO, 6 ejecuciones
+N=256 desplazamiento=0: 1.581944 0.395805 0.396256 1.823068 1.800895 1.585425
+N=256 desplazamiento=64: 0.409548 0.438848 0.446584 0.452113 0.441554 0.450904
+N=256 desplazamiento=1024: 0.400512 0.397954 0.397681 0.403611 0.404746 0.399930
+N=256 desplazamiento=2048: 0.400939 0.404226 0.399311 0.402566 0.399029 0.400289
+# 3) mallas grandes, 300 pasos, desplazamiento 0 frente a 1024, 3 ejecuciones
+N=512 desplazamiento=0: 0.104275 0.101541 0.101125
+N=512 desplazamiento=1024: 0.100280 0.101736 0.101215
+N=2048 desplazamiento=0: 2.185150 2.283738 2.189464
+N=2048 desplazamiento=1024: 2.345929 2.495506 2.334648

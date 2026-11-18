@@ -514,13 +514,14 @@ static int modo_medir(void) {
 
     printf("\nMEDICIONES (300 pasos, 4 repeticiones, criterio: minimo, hilos=%d)\n",
            hilos);
-    printf("N     Rep1 (s)     Rep2 (s)     Rep3 (s)     Rep4 (s)     Minimo (s)\n");
-    printf("----------------------------------------------------------------------\n");
+    printf("N     Rep1 (s)     Rep2 (s)     Rep3 (s)     Rep4 (s)     Minimo (s)    Checksum\n");
+    printf("------------------------------------------------------------------------------------\n");
 
     for (int i = 0; i < 4; i++) {
 
         double tiempos[4];
         double minimo = 0.0;
+        double checksum = 0.0;   // se imprime: evita que -O2 elimine el calculo
 
         for (int r = 0; r < repeticiones; r++) {
 
@@ -537,14 +538,15 @@ static int modo_medir(void) {
             }
 
             tiempos[r] = res.tiempo;
+            checksum = res.checksum;
             if (r == 0 || tiempos[r] < minimo) {
                 minimo = tiempos[r];
             }
         }
 
-        printf("%-5d %.9f  %.9f  %.9f  %.9f  %.9f\n",
+        printf("%-5d %.9f  %.9f  %.9f  %.9f  %.9f  %.6f\n",
                tamanos[i], tiempos[0], tiempos[1],
-               tiempos[2], tiempos[3], minimo);
+               tiempos[2], tiempos[3], minimo, checksum);
 
         fflush(stdout);
     }

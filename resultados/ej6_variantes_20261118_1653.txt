@@ -1,0 +1,438 @@
+# 2026-11-18 16:53  repeticiones=6 (intercaladas) criterio=minimo
+# gcc -Wall -Wextra -O2 -std=c11 termo_ej1.c -o termo_secuencial.exe -lm && gcc -Wall -Wextra -Wno-unknown-pragmas -O2 -std=c11 termo_ej6_it1.c -o termo_secuencial_fusionada.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej2.c -o termo_v_base.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej6_it1.c -o termo_v_it1.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej6_it2.c -o termo_v_it2.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej6_it3.c -o termo_v_it3.exe -lm
+termo_v_base.exe verificar 2048 300
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+2      2       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+4      4       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+8      8       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+16     16      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+20     20      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+24     24      0.000e+00          1.890947666930686e+06   2.051e-13               PASA
+
+Verificacion global: PASA
+termo_v_it1.exe verificar 2048 300
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+2      2       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+4      4       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+8      8       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+16     16      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+20     20      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+24     24      0.000e+00          1.890947666930686e+06   2.051e-13               PASA
+
+Verificacion global: PASA
+termo_v_it2.exe verificar 2048 300
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+2      2       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+4      4       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+8      8       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+16     16      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+20     20      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+24     24      0.000e+00          1.890947666930686e+06   2.051e-13               PASA
+
+Verificacion global: PASA
+termo_v_it3.exe verificar 2048 300
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+1      1       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+2      2       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+4      4       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+8      8       0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+16     16      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+20     20      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+24     24      0.000e+00          1.890947666930686e+06   2.051e-13               PASA
+
+Verificacion global: PASA
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.192552 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.398091 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.766667 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.444849 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.386287 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.402852 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.235045 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.346477 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.757466 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.442423 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.405485 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.404900 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.245687 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.294392 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.774183 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.437393 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.397234 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.416880 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.251026 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.375646 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.767974 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.445734 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.383403 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.406918 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.156304 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.323332 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.767333 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.433982 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.386951 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.410402 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.198961 Bordes=OK Monotono=OK Rango=OK
+termo_secuencial_fusionada.exe 2048 300 0 fijo
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.310400 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.752024 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.432415 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.382332 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.398461 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.214556 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.273471 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.362155 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.346209 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.242748 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.706201 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.712340 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.714142 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.860712 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.519373 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.521409 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.511429 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.762183 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.447681 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.412125 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.416183 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.751977 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.437956 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.405303 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.401047 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.688768 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.423953 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.400287 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.424655 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.699374 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.409385 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.392319 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.438480 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.681566 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.399023 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.398478 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.436560 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.210428 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.329763 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.323636 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.302470 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.243743 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.713914 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.716803 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.714645 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.887660 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.548441 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.520554 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.506107 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.763387 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.441374 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.398609 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.405186 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.745490 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.443662 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.400466 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.417701 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.702245 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.423930 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.390039 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.418380 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.692900 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.428333 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.395013 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.428563 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.682352 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.404019 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.408398 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.435910 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.146885 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.298415 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.279176 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.316520 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.227204 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.720889 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.720298 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.710558 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.879663 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.535875 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.509863 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.505120 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.755121 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.431268 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.400232 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.413768 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.750972 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.446637 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.408416 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.418836 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.745487 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.431808 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.397246 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.425294 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.713268 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.418249 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.397068 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.431150 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.695295 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.415144 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.398148 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.437060 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=2.181159 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.279974 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.322234 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 1
+N=2048 Hilos=1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.293350 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=1.237603 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.717816 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.718080 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 2
+N=2048 Hilos=2 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.719205 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.898388 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.543970 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.504502 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 4
+N=2048 Hilos=4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.526379 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.741558 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.448147 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.411569 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 8
+N=2048 Hilos=8 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.415604 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.757154 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.456106 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.401816 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.413246 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.714395 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.417132 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.388885 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 16
+N=2048 Hilos=16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.415778 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.698847 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.413033 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.390458 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 20
+N=2048 Hilos=20 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.423501 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.689328 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.395075 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.393208 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 2048 300 0 fijo 24
+N=2048 Hilos=24 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666931 Tiempo=0.438777 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.405973 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.789272 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.784469 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.985314 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.023991 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.007572 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.030331 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.278501 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.353297 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.777126 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.743372 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.980102 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.045912 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.184992 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.147621 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.376142 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.366443 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.753967 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.744750 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 4
+N=250 Hilos=4 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=0.959410 Bordes=OK Monotono=OK Rango=OK
+termo_v_base.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.026602 Bordes=OK Monotono=OK Rango=OK
+termo_v_it1.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.070576 Bordes=OK Monotono=OK Rango=OK
+termo_v_it2.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=1.044730 Bordes=OK Monotono=OK Rango=OK
+termo_v_it3.exe 250 20133 0 fijo 12
+N=250 Hilos=12 Pasos=20133 Residuo=6.846275e-04 Checksum=1332432.273210 Tiempo=2.304105 Bordes=OK Monotono=OK Rango=OK

@@ -1,0 +1,33 @@
+"# configuracion principal: N=2048, 300 pasos, 12 hilos; T1 secuencial ej1=2.156304; T1 mejor secuencial (fusionada)=1.294392"
+variante,tiempo_s,speedup_abs,speedup_vs_mejor_sec,mejora_vs_anterior_pct,mejora_vs_base_pct,GBs_modelo_16B,verificacion
+base,0.752024,2.867,1.721,,+0.0,26.7,PASA
+it1,0.432415,4.987,2.993,-42.5,-42.5,46.5,PASA
+it2,0.382332,5.640,3.386,-11.6,-49.2,52.6,PASA
+it3,0.398461,5.412,3.248,+4.2,-47.0,50.4,PASA
+
+# barrido de hilos: speedup absoluto
+hilos,base,it1,it2,it3
+1,1.004,1.693,1.686,1.667
+2,1.757,3.053,3.027,3.035
+4,2.505,4.152,4.274,4.269
+8,2.908,5.000,5.410,5.322
+12,2.892,4.924,5.384,5.377
+16,3.131,5.169,5.545,5.186
+20,3.112,5.267,5.522,5.092
+24,3.164,5.458,5.484,4.947
+
+# barrido de hilos: speedup frente a la mejor secuencial (fusionada)
+hilos,base,it1,it2,it3
+1,0.603,1.016,1.012,1.001
+2,1.055,1.833,1.817,1.822
+4,1.504,2.492,2.566,2.563
+8,1.746,3.001,3.247,3.195
+12,1.736,2.956,3.232,3.228
+16,1.879,3.103,3.328,3.113
+20,1.868,3.162,3.315,3.056
+24,1.899,3.276,3.292,2.969
+
+"# malla pequena N=250, 20133 pasos: tiempo minimo (s)"
+hilos,base,it1,it2,it3
+4,1.353297,0.753967,0.743372,0.959410
+12,2.023991,1.007572,1.030331,2.278501
