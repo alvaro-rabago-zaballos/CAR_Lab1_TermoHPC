@@ -1,0 +1,170 @@
+# 2026-11-18 12:08  N=2048 pasos=300 hilos=12 repeticiones=4 (intercaladas) criterio=minimo
+# gcc -Wall -Wextra -O2 termo_ej1.c -o termo_secuencial.exe -lm && gcc -Wall -Wextra -O2 -std=c11 -fopenmp termo_ej5.c -o termo_ej5.exe -lm
+OMP_SCHEDULE=None termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.161819 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=None termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.169546 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=None termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.152352 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=None termo_secuencial.exe 2048 300 0 fijo
+N=2048 Pasos=300 Residuo=8.064433e-002 Checksum=1890947.666930 Tiempo=2.206206 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.768632 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.915693 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.840658 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.770592 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.763027 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.803414 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.680958 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.651057 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.687335 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=guided termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=guided,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.657898 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.754791 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.926919 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.866448 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.796529 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.789180 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.793609 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.695689 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.662222 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.677012 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=guided termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=guided,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.667311 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.745827 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.921196 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.848972 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.774404 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.765391 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.804177 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.697872 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.680131 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.705965 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=guided termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=guided,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.675183 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.765148 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.933765 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.856042 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.790126 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=static,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.793896 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,1 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.810753 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,4 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,4 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.713447 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,16 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,16 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.676761 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=dynamic,64 termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=dynamic,64 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.691780 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=guided termo_ej5.exe 2048 300 0 fijo 12
+N=2048 Hilos=12 Planif=guided,1 Pasos=300 Residuo=8.064433e-02 Checksum=1890947.666930 Tiempo=0.688783 Bordes=OK Monotono=OK Rango=OK
+OMP_SCHEDULE=static termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=static  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=static,1 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=static,1  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=static,4 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=static,4  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=static,16 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=static,16  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=static,64 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=static,64  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=dynamic,1 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=dynamic,1  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=dynamic,4 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=dynamic,4  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=dynamic,16 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=dynamic,16  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=dynamic,64 termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=dynamic,64  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
+OMP_SCHEDULE=guided termo_ej5.exe verificar 2048 300 12
+VERIFICACION: paralelo frente a referencia secuencial
+N=2048  pasos=300  planificacion=guided,1  tolerancia=1e-09  checksum referencia=1.890947666930298e+06
+Hilos  Reales  Dif. maxima campo  Checksum paralelo       Dif. relativa checksum  Resultado
+-------------------------------------------------------------------------------------------------
+12     12      0.000e+00          1.890947666930298e+06   0.000e+00               PASA
+
+Verificacion global: PASA
