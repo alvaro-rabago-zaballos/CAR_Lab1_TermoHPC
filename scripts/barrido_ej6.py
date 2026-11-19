@@ -13,7 +13,11 @@ Para cada variante:
      REPS repeticiones INTERCALADAS entre variantes, minimo;
   3. barrido de 1 a 24 hilos (4 repeticiones intercaladas, minimo);
   4. malla pequena (N=250, 20133 pasos) con 4 y 12 hilos (3 repeticiones).
-T1 es la version secuencial termo_ej1.c (speedup absoluto).
+Se dan dos speedups:
+  - frente a la secuencial del ejercicio 1 (termo_ej1.c, dos pasadas por paso);
+  - frente a la MEJOR secuencial (apartado V.B del enunciado): termo_ej6_it1.c
+    compilado SIN -fopenmp, que tiene el residuo fusionado (una pasada).
+Las dos secuenciales se miden intercaladas con las variantes.
 
 Uso (desde la carpeta del repositorio):
     python scripts/barrido_ej6.py [REPS]
@@ -34,6 +38,7 @@ VARIANTES = [
     ("it3", "termo_ej6_it3.c"),
 ]
 SEC = "termo_secuencial" + EXT
+SEC_FUS = "termo_secuencial_fusionada" + EXT
 HILOS = [1, 2, 4, 8, 12, 16, 20, 24]
 CLAVE = re.compile(r"(\w+)=(\S+)")
 
@@ -61,7 +66,9 @@ def tiempo(orden, bruto):
 
 def main():
     reps = int(sys.argv[1]) if len(sys.argv) > 1 else 6
-    compilar = [["gcc", "-Wall", "-Wextra", "-O2", "termo_ej1.c", "-o", SEC, "-lm"]]
+    compilar = [["gcc", "-Wall", "-Wextra", "-O2", "-std=c11", "termo_ej1.c", "-o", SEC, "-lm"],
+                ["gcc", "-Wall", "-Wextra", "-Wno-unknown-pragmas", "-O2", "-std=c11",
+                 "termo_ej6_it1.c", "-o", SEC_FUS, "-lm"]]
     compilar += [["gcc", "-Wall", "-Wextra", "-O2", "-std=c11", "-fopenmp", f,
                   "-o", exe(v), "-lm"] for v, f in VARIANTES]
     for orden in compilar:
@@ -90,12 +97,15 @@ def main():
         #    variantes para que todas se midan en las mismas condiciones
         #    termicas (el portatil pierde turbo tras las rafagas multihilo).
         secuencial = []
+        secuencial_fus = []
         principal = {v: [] for v in nombres}
         for _ in range(reps):
             secuencial.append(tiempo([SEC, "2048", "300", "0", "fijo"], bruto))
+            secuencial_fus.append(tiempo([SEC_FUS, "2048", "300", "0", "fijo"], bruto))
             for v in nombres:
                 principal[v].append(tiempo([exe(v), "2048", "300", "0", "fijo", "12"], bruto))
         t_sec = min(secuencial)
+        t_fus = min(secuencial_fus)
         print("  configuracion principal hecha", flush=True)
 
         # 3. Barrido de hilos
@@ -120,14 +130,16 @@ def main():
     with open(base + ".csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["# configuracion principal: N=2048, 300 pasos, 12 hilos; "
-                    f"T1 secuencial={t_sec:.6f}"])
-        w.writerow(["variante", "tiempo_s", "speedup_abs", "mejora_vs_anterior_pct",
+                    f"T1 secuencial ej1={t_sec:.6f}; "
+                    f"T1 mejor secuencial (fusionada)={t_fus:.6f}"])
+        w.writerow(["variante", "tiempo_s", "speedup_abs", "speedup_vs_mejor_sec",
+                    "mejora_vs_anterior_pct",
                     "mejora_vs_base_pct", "GBs_modelo_16B", "verificacion"])
         anterior = None
         t_base = min(principal["base"])
         for v in nombres:
             t = min(principal[v])
-            w.writerow([v, f"{t:.6f}", f"{t_sec / t:.3f}",
+            w.writerow([v, f"{t:.6f}", f"{t_sec / t:.3f}", f"{t_fus / t:.3f}",
                         "" if anterior is None else f"{(t / anterior - 1) * 100:+.1f}",
                         f"{(t / t_base - 1) * 100:+.1f}",
                         f"{bytes_paso / (t / 300) / 1e9:.1f}", verif[v]])
@@ -138,18 +150,25 @@ def main():
         for h in HILOS:
             w.writerow([h] + [f"{t_sec / min(barrido[(v, h)]):.3f}" for v in nombres])
         w.writerow([])
+        w.writerow(["# barrido de hilos: speedup frente a la mejor secuencial (fusionada)"])
+        w.writerow(["hilos"] + nombres)
+        for h in HILOS:
+            w.writerow([h] + [f"{t_fus / min(barrido[(v, h)]):.3f}" for v in nombres])
+        w.writerow([])
         w.writerow(["# malla pequena N=250, 20133 pasos: tiempo minimo (s)"])
         w.writerow(["hilos"] + nombres)
         for h in (4, 12):
             w.writerow([h] + [f"{min(pequena[(v, h)]):.6f}" for v in nombres])
 
-    print(f"\nT1 secuencial (N=2048, 300 pasos) = {t_sec:.4f} s")
-    print(f"{'variante':<8} {'tiempo':>8} {'speedup':>8} {'vs anterior':>11} {'GB/s(16B)':>10}")
+    print(f"\nT1 secuencial ej1 = {t_sec:.4f} s   "
+          f"T1 mejor secuencial (fusionada) = {t_fus:.4f} s")
+    print(f"{'variante':<8} {'tiempo':>8} {'S(ej1)':>7} {'S(mejor)':>8} "
+          f"{'vs anterior':>11} {'GB/s(16B)':>10}")
     anterior = None
     for v in nombres:
         t = min(principal[v])
         mejora = "" if anterior is None else f"{(t / anterior - 1) * 100:+.1f}%"
-        print(f"{v:<8} {t:8.4f} {t_sec / t:8.2f} {mejora:>11} "
+        print(f"{v:<8} {t:8.4f} {t_sec / t:7.2f} {t_fus / t:8.2f} {mejora:>11} "
               f"{bytes_paso / (t / 300) / 1e9:10.1f}")
         anterior = t
     print(f"\nGuardado en {base}.txt y {base}.csv")

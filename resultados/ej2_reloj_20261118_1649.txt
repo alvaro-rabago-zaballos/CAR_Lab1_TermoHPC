@@ -1,0 +1,5 @@
+# 2026-11-18 16:49
+# RESOLUCION DE LOS RELOJES (menor incremento observado en 200 intentos)
+reloj,resolucion_declarada_s,resolucion_observada_s
+omp_get_wtime,1.000e-003,9.999e-004
+reloj_propio,,9.988e-008

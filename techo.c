@@ -9,11 +9,13 @@
 //               a[i] = b[i] + f*c[i] sobre vectores que no caben en ninguna cache.
 //   barrera  -> coste de una barrera y de abrir/cerrar una region paralela,
 //               para compararlo con el tiempo por paso de Jacobi.
+//   reloj    -> resolucion de omp_get_wtime() (lo que declara omp_get_wtick()
+//               y lo que se observa) frente a la del reloj propio reloj().
 //
 // Compilacion:
 //   gcc -Wall -Wextra -O2 -std=c11 -fopenmp techo.c -o techo.exe -lm
 // Uso:
-//   techo.exe calculo | ancho | barrera
+//   techo.exe calculo | ancho | barrera | reloj
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -232,6 +234,37 @@ static void modo_barrera(void) {
     printf("# comprobacion (ignorar): %.0f\n", sumidero);
 }
 
+// ---------------------------------------------------------------------------
+// Resolucion de los relojes
+// ---------------------------------------------------------------------------
+
+// Menor incremento distinto de cero que se observa leyendo el reloj seguido.
+static double incremento_minimo(double (*leer)(void)) {
+    double menor = 1e30;
+    for (int k = 0; k < 200; k++) {
+        double t0 = leer();
+        double t1 = leer();
+        while (t1 == t0) {
+            t1 = leer();
+        }
+        if (t1 - t0 < menor) {
+            menor = t1 - t0;
+        }
+    }
+    return menor;
+}
+
+static double leer_omp(void) {
+    return omp_get_wtime();
+}
+
+static void modo_reloj(void) {
+    printf("# RESOLUCION DE LOS RELOJES (menor incremento observado en 200 intentos)\n");
+    printf("reloj,resolucion_declarada_s,resolucion_observada_s\n");
+    printf("omp_get_wtime,%.3e,%.3e\n", omp_get_wtick(), incremento_minimo(leer_omp));
+    printf("reloj_propio,,%.3e\n", incremento_minimo(reloj));
+}
+
 int main(int argc, char *argv[]) {
 
     if (argc == 2 && strcmp(argv[1], "calculo") == 0) {
@@ -240,8 +273,10 @@ int main(int argc, char *argv[]) {
         modo_ancho();
     } else if (argc == 2 && strcmp(argv[1], "barrera") == 0) {
         modo_barrera();
+    } else if (argc == 2 && strcmp(argv[1], "reloj") == 0) {
+        modo_reloj();
     } else {
-        printf("Uso: techo calculo | ancho | barrera\n");
+        printf("Uso: techo calculo | ancho | barrera | reloj\n");
         return 1;
     }
     return 0;

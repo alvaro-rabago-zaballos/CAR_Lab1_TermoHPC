@@ -1,3 +1,5 @@
+// Necesario para clock_gettime/CLOCK_MONOTONIC al compilar en Linux con -std=c11.
+#define _POSIX_C_SOURCE 199309L
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -129,9 +131,11 @@ int comprobar_temperaturas(const double *malla, int n) {
     return 1;
 }
 
-// Ejecuta la simulacion y devuelve el tiempo empleado.
+// Ejecuta la simulacion y devuelve el tiempo empleado. Si checksum_salida no
+// es NULL, guarda en el el checksum final (para imprimirlo tambien al medir).
 double ejecutar_simulacion(int n, int max_pasos, double tolerancia,
-                          int modo_convergencia, int mostrar) {
+                          int modo_convergencia, int mostrar,
+                          double *checksum_salida) {
 
     size_t elementos = (size_t)n * n;
 
@@ -207,6 +211,10 @@ double ejecutar_simulacion(int n, int max_pasos, double tolerancia,
                temperaturas_correctas ? "OK" : "FALLO");
     }
 
+    if (checksum_salida != NULL) {
+        *checksum_salida = checksum;
+    }
+
     free(actual);
     free(nueva);
 
@@ -229,18 +237,19 @@ int main(int argc, char *argv[]) {
         int repeticiones = 4;
 
         printf("\nMEDICIONES SECUENCIALES (300 pasos, 4 repeticiones, criterio: minimo)\n");
-        printf("N     Rep1 (s)     Rep2 (s)     Rep3 (s)     Rep4 (s)     Minimo (s)\n");
-        printf("----------------------------------------------------------------------\n");
+        printf("N     Rep1 (s)     Rep2 (s)     Rep3 (s)     Rep4 (s)     Minimo (s)    Checksum\n");
+        printf("------------------------------------------------------------------------------------\n");
 
         for (int i = 0; i < 4; i++) {
 
             double tiempos[4];
             double minimo = 0.0;
+            double checksum = 0.0;   // se imprime: evita que -O2 elimine el calculo
 
             for (int r = 0; r < repeticiones; r++) {
 
                 tiempos[r] = ejecutar_simulacion(
-                    tamanos[i], pasos, 0.0, 0, 0
+                    tamanos[i], pasos, 0.0, 0, 0, &checksum
                 );
 
                 if (tiempos[r] < 0.0) {
@@ -252,9 +261,9 @@ int main(int argc, char *argv[]) {
                 }
             }
 
-            printf("%-5d %.9f  %.9f  %.9f  %.9f  %.9f\n",
+            printf("%-5d %.9f  %.9f  %.9f  %.9f  %.9f  %.6f\n",
                    tamanos[i], tiempos[0], tiempos[1],
-                   tiempos[2], tiempos[3], minimo);
+                   tiempos[2], tiempos[3], minimo, checksum);
 
             fflush(stdout);
         }
@@ -285,7 +294,7 @@ int main(int argc, char *argv[]) {
     }
 
     double tiempo = ejecutar_simulacion(
-        n, max_pasos, tolerancia, modo_convergencia, 1
+        n, max_pasos, tolerancia, modo_convergencia, 1, NULL
     );
 
     return tiempo < 0.0 ? 1 : 0;

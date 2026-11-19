@@ -54,18 +54,21 @@ def leer_bloques(ruta):
     return [[dict(zip(b[0], r)) for r in b[1:]] for b in bloques]
 
 
-def techo_ancho(ruta):
-    mejor = 0.0
+def techo_ancho(ruta, hilos=12):
+    """Ancho de banda del triad (modelo de 24 B) con el MISMO numero de hilos
+    con el que se miden las variantes."""
     with open(ruta, encoding="utf-8") as f:
         for linea in f:
             partes = linea.strip().split(",")
-            if len(partes) == 5 and partes[0].isdigit():
-                mejor = max(mejor, float(partes[3]))
-    return mejor
+            if len(partes) == 5 and partes[0] == str(hilos):
+                return float(partes[3])
+    raise ValueError(f"No hay medida del triad con {hilos} hilos en {ruta}")
 
 
 def main():
-    variantes, barrido, _ = leer_bloques(sys.argv[1])
+    # Bloques del CSV: variantes, speedup frente a la secuencial del ej. 1,
+    # speedup frente a la MEJOR secuencial (fusionada) y malla pequena.
+    variantes, _, barrido, _ = leer_bloques(sys.argv[1])
     techo = techo_ancho(sys.argv[2])
     os.makedirs("figuras", exist_ok=True)
     plt.rcParams["font.family"] = "DejaVu Sans"
@@ -83,13 +86,14 @@ def main():
         extra = (f"  ({r['mejora_vs_anterior_pct'].replace('.', ',')} % frente a la anterior)"
                  if r["mejora_vs_anterior_pct"] else "")
         ax.text(float(r["tiempo_s"]) + 0.01, yi,
-                f"{coma(float(r['tiempo_s']), 3)} s · speedup {coma(float(r['speedup_abs']), 2)}{extra}",
+                f"{coma(float(r['tiempo_s']), 3)} s · S = {coma(float(r['speedup_vs_mejor_sec']), 2)}{extra}",
                 va="center", fontsize=9, color=TINTA)
     ax.set_yticks(y)
     ax.set_yticklabels([NOMBRES[c] for c in claves], fontsize=10, color=TINTA)
     ax.set_xlim(0, max(t) * 1.95)
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: coma(v, 1)))
-    ax.set_xlabel("Tiempo de 300 pasos (s), N = 2048, 12 hilos, mínimo de 6", color=TINTA)
+    ax.set_xlabel("Tiempo de 300 pasos (s), N = 2048, 12 hilos, mínimo de 6\n"
+                  "S = speedup frente a la mejor secuencial (residuo fusionado)", color=TINTA)
     ax.set_title("Variantes del ejercicio 6 (todas verifican)", color=TINTA,
                  fontsize=11, loc="left")
     fig.tight_layout()
@@ -105,14 +109,16 @@ def main():
         s = [float(r[c]) for r in barrido]
         ax.plot(h, s, color=COLORES[c], linewidth=2, marker=marca, markersize=6,
                 label=NOMBRES[c])
-        dy = {"it1": 7, "it2": -7}.get(c, 0)   # separa etiquetas muy proximas
+        # separa las etiquetas finales muy proximas, respetando su orden
+        dy = 7 if s[-1] >= max(float(r[o]) for r in barrido[-1:] for o in claves) else (
+            -7 if c in ("it1", "it2") else 0)
         ax.annotate(coma(s[-1], 2), (h[-1], s[-1]), textcoords="offset points",
                     xytext=(7, dy), va="center", fontsize=9, color=TINTA)
     ax.set_xticks(h)
     ax.set_xlim(0, 27)
-    ax.set_ylim(0, 7)
+    ax.set_ylim(0, max(float(r[c]) for r in barrido for c in claves) * 1.3)
     ax.set_xlabel("Número de hilos", color=TINTA)
-    ax.set_ylabel("Speedup absoluto (N = 2048, 300 pasos)", color=TINTA)
+    ax.set_ylabel("Speedup frente a la mejor secuencial\n(N = 2048, 300 pasos)", color=TINTA)
     ax.set_title("Speedup de cada variante", color=TINTA, fontsize=11, loc="left")
     ax.legend(frameon=False, fontsize=9, loc="upper left")
     fig.tight_layout()
@@ -128,8 +134,8 @@ def main():
     ax.bar(x, gbs, width=0.6, color=[COLORES[c] for c in claves],
            edgecolor="white", linewidth=2)
     ax.axhline(techo, color=TINTA_2, linestyle="--", linewidth=1.2)
-    ax.text(len(claves) - 0.5, techo + 1, f"techo medido (triad): {coma(techo, 1)} GB/s",
-            ha="right", fontsize=9, color=TINTA_2)
+    ax.text(-0.45, techo + 1, f"techo medido (triad, 12 hilos): {coma(techo, 1)} GB/s",
+            ha="left", fontsize=9, color=TINTA_2)
     for xi, g in zip(x, gbs):
         ax.text(xi, g - 4, f"{coma(g, 1)}\n({coma(100 * g / techo, 0)} %)",
                 ha="center", va="top", fontsize=9, color="white")
